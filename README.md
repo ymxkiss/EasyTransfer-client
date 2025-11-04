@@ -1,8 +1,9 @@
-修改客户端代码中的信令服务器地址。在 ./client/.env.production 中修改 VITE_SIGNAL_SERVER_URL 为您刚刚部署的信令服务器地址。
+## 自行部署修改方法
+1. 修改客户端代码中的信令服务器地址。在 ./client/.env.production 中修改 VITE_SIGNAL_SERVER_URL 为您刚刚部署的信令服务器地址。
+2. 修改客户端代码中的 STUN 和 TURN 服务器地址。如果您额外部署了 STUN 和 TURN 服务器，您可以在 ./client/src/const.ts 中修改 iceServers 为您自己的 STUN 和 TURN 服务器地址。
 
-修改客户端代码中的 STUN 和 TURN 服务器地址。如果您额外部署了 STUN 和 TURN 服务器，您可以在 ./client/src/const.ts 中修改 iceServers 为您自己的 STUN 和 TURN 服务器地址。
 <div align="center">
-<img src="assets/favicon.svg" alt="logo" width="100" height="100" />
+
 
 <h1>EasyTransfer</h1>
 
@@ -46,6 +47,7 @@ EasyTransfer 是一款免费、匿名、加密且易于使用的 E2EE 文件传�
 ```
 docker run -d --restart=always -p 18880:80 ghcr.io/ymxkiss/easytransfer-client:latest
 ```
+docker部署方式默认使用https://github.com/WCY-dt/EasyTransfer的后端以及TURN服务器
 
 ## 自行部署
 
