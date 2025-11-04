@@ -3,20 +3,7 @@
    DOCKER部署地址[https://github.com/ymxkiss/EasyTransfer-server](https://github.com/ymxkiss/EasyTransfer-server)
 2. 修改客户端代码中的 STUN 和 TURN 服务器地址。如果您额外部署了 STUN 和 TURN 服务器，您可以在 ./client/src/const.ts 中修改 iceServers 为您自己的 STUN 和 TURN 服务器地址。
    ```
-   docker run -d \
-     --name coturn \
-     --restart always \
-     --net=host \
-     -e TZ=Asia/Shanghai \
-     instrumentisto/coturn:latest \
-     -L 0.0.0.0:3478 \
-     -E 你的公网IP \
-     --min-port 49152 --max-port 65535 \
-     -u test:123456 \
-     -r turn.example.com \
-     --static-auth-secret=your_secret_key \
-     --lt-cred-mech \
-     --verbose
+   sudo docker run -d -p 3478:3478 -p 3478:3478/udp --restart=always zolochevska/turn-server username password realm
    ```
 
 <div align="center">
