@@ -48,7 +48,7 @@ EasyTransfer 是一款免费、匿名、加密且易于使用的 E2EE 文件传�
 
 ## DOCKER部署
 ```
-docker run -d --restart=always -p 18880:80 ghcr.io/ymxkiss/easytransfer-client:latest
+docker run -d --restart=always --name=EasyTransfer-client -p 18880:80 ghcr.io/ymxkiss/easytransfer-client:latest
 ```
 docker部署方式默认使用[https://github.com/WCY-dt/EasyTransfer](https://github.com/WCY-dt/EasyTransfer)的后端以及TURN服务器
 
